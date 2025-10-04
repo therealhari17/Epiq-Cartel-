@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epiq Cartel</title>
+  <title>Home - Epiq Cartel</title>
   <style>
-    /* Root colors */
     :root {
       --deep-blue: #0046FF;
       --soft-cyan: #73C8D2;
@@ -21,7 +20,6 @@
       color: #222;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -40,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 12px; /* reduced space */
       text-decoration: none;
       color: white;
       font-weight: bold;
@@ -52,56 +50,65 @@
 
     /* Hero Section */
     .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      height: 90vh;
-      background: linear-gradient(135deg, var(--soft-cyan), var(--deep-blue));
+      padding: 100px 20px 60px 20px;
+      background: linear-gradient(to right, var(--soft-cyan), var(--deep-blue));
       color: white;
-      padding: 0 20px;
     }
 
     .hero h2 {
       font-size: 2.5rem;
-      margin: 0 0 20px 0;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      margin: 0 0 30px 0;
+      font-size: 1.3rem;
+      margin-bottom: 30px;
     }
 
     .hero a {
+      padding: 12px 30px;
       background-color: var(--vibrant-orange);
       color: white;
-      padding: 15px 30px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
-      transition: 0.3s;
     }
 
     .hero a:hover {
       background-color: white;
       color: var(--vibrant-orange);
+      transition: 0.3s;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
       background-color: var(--deep-blue);
       color: white;
+      margin-top: 40px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .hero h2 {
         font-size: 2rem;
       }
       .hero p {
         font-size: 1rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        margin-left: 0;
       }
     }
   </style>
@@ -114,38 +121,18 @@
       <a href="team.html">Team</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="contacts.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>If we can we can</h2>
-    <p>Epiq Cartel is a small team who can do incredible work in an easy way. Learn and grow with us.</p>
-    <a href="projects.html">See Our Work</a>
+    <h2>Welcome to Epiq Cartel</h2>
+    <p>Small team. Incredible work. Effortless solutions.</p>
+    <a href="services.html">Explore Our Services</a>
   </section>
 
   <footer>
-    &copy; 2025 Epiq Cartel. Contact: epiqcartel.team@gmail.com
+    &copy; 2025 Epiq Cartel
   </footer>
 </body>
 </html>
-/* Navigation adjustments */
-nav a {
-  margin-left: 12px; /* reduce space between links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  nav a {
-    margin-left: 0; /* remove extra left margin for wrap */
-  }
-}
