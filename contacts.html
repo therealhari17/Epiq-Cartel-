@@ -1,142 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Epiq Cartel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #F7FBFC;
-      color: #0a0a0a;
-    }
-
-    header {
-      background-color: #769FCD;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      background-color: #B9D7EA;
-      padding: 10px;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #0a0a0a;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #769FCD;
-    }
-
-    .contact-section {
-      max-width: 800px;
-      margin: 50px auto;
-      background-color: #D6E6F2;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      color: #769FCD;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #333;
-    }
-
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #B9D7EA;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      background: #F7FBFC;
-    }
-
-    button {
-      background-color: #769FCD;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #5d89b5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      background-color: #B9D7EA;
-      color: #0a0a0a;
-      font-size: 14px;
+    .gradient-text {
+      background: linear-gradient(90deg, #093FB4, #ED3500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h2>Epiq Cartel</h2>
+<body class="bg-[#FFFCFB] font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-[#FFD8D8] shadow sticky top-0 z-50">
+    <div class="text-2xl font-bold gradient-text">Epiq Cartel</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+      <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+      <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+      <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+      <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden p-2 rounded bg-[#093FB4] text-white">Menu</button>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contacts.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden fixed top-0 right-0 w-64 h-full bg-[#FFD8D8] shadow-lg p-6 flex flex-col space-y-6 z-40">
+    <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+    <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+    <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+    <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+    <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
+  </div>
 
-  <section class="contact-section">
-    <h1>Contact Us</h1>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Contact Section -->
+  <section class="max-w-2xl mx-auto py-32 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-12 gradient-text">Get in Touch</h2>
+    <p class="text-lg text-[#093FB4] mb-6">
+      Email us at: <a href="mailto:epiqcartel.team@gmail.com" class="font-semibold text-[#ED3500]">epiqcartel.team@gmail.com</a>
+    </p>
+    <p class="text-lg text-[#093FB4] mb-6">
+      Alternate Email: <a href="mailto:horizonsyndicate.team@gmail.com" class="font-semibold text-[#ED3500]">horizonsyndicate.team@gmail.com</a>
+    </p>
+    <p class="text-lg text-[#093FB4] mb-6">
+      Follow us on Instagram: <a href="https://instagram.com/horizonsyndicate" target="_blank" class="font-semibold text-[#ED3500]">@horizonsyndicate</a>
+    </p>
   </section>
 
-  <footer>
-    <p>© 2025 Epiq Cartel. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-[#FFD8D8] text-[#093FB4]">
+    © 2025 Epiq Cartel | Email: epiqcartel.team@gmail.com | IG: @horizonsyndicate
   </footer>
+
+  <!-- JS for Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
+
 </body>
 </html>
