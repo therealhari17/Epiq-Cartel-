@@ -4,118 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Epiq Cartel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --light-bg: #F7FBFC;
-      --mid-blue: #D6E6F2;
-      --soft-blue: #B9D7EA;
-      --deep-blue: #769FCD;
-      --text-dark: #1f1f1f;
-      --accent: #4079ff;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-family);
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: var(--deep-blue);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa);
+    .gradient-text {
+      background: linear-gradient(90deg, #093FB4, #ED3500);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: gradientMove 3s infinite linear;
-      background-size: 300%;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0%; }
-      100% { background-position: 300%; }
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    section.about {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      color: var(--deep-blue);
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      line-height: 1.7;
-      font-size: 1.1rem;
-      color: #333;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--deep-blue);
-      color: white;
-      margin-top: 60px;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Epiq Cartel</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="team.html">Team</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+<body class="bg-[#FFFCFB] font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-[#FFD8D8] shadow sticky top-0 z-50">
+    <div class="text-2xl font-bold gradient-text">Epiq Cartel</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+      <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+      <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+      <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+      <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
     </nav>
+    <button id="menuBtn" class="md:hidden p-2 rounded bg-[#093FB4] text-white">Menu</button>
   </header>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      Epiq Cartel is a passionate community built by creators, for creators.  
-      We focus on innovation, teamwork, and the drive to turn ideas into impact.  
-      From digital experiences to creative projects, our goal is to deliver excellence and inspiration in everything we do.
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden fixed top-0 right-0 w-64 h-full bg-[#FFD8D8] shadow-lg p-6 flex flex-col space-y-6 z-40">
+    <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+    <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+    <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+    <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+    <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
+  </div>
+
+  <!-- About Section -->
+  <section class="max-w-4xl mx-auto py-32 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8 gradient-text">About Epiq Cartel</h2>
+    <p class="text-lg text-[#093FB4] mb-4">
+      Epiq Cartel is a small but dynamic team that delivers incredible solutions in easy and innovative ways.  
+      We believe in learning, growing, and always striving for perfection while maintaining a positive and progressive approach.
     </p>
-    <p>
-      Our team brings together designers, developers, and visionaries who believe  
-      in the power of collaboration. We don’t just build — we evolve, adapt, and grow with every project.
+    <p class="text-lg text-[#093FB4] mb-4">
+      Since 2025, we have been crafting software, product services, and creative solutions with a focus on simplicity and excellence.
+    </p>
+    <p class="text-lg text-[#093FB4]">
+      Our goal is to empower individuals and teams with tools, insights, and innovative ideas that make work seamless and enjoyable.
     </p>
   </section>
 
-  <footer>
-    &copy; 2025 Epiq Cartel — All rights reserved.
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-[#FFD8D8] text-[#093FB4]">
+    © 2025 Epiq Cartel | Email: epiqcartel.team@gmail.com | IG: @horizonsyndicate
   </footer>
+
+  <!-- JS for Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
