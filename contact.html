@@ -11,6 +11,7 @@
       --light-cream: #F5F1DC;
       --vibrant-orange: #FF9013;
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --sm-accent: #FF9013;
     }
 
     body {
@@ -20,60 +21,110 @@
       color: #222;
     }
 
-    header {
+    /* Gradient Text Animation */
+    .gradient-text {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(270deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
+      background-size: 1000% 1000%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 5s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Staggered Menu CSS */
+    .staggered-menu-wrapper {
+      position: relative;
+      width: 100%;
+      z-index: 40;
+    }
+
+    .staggered-menu-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: var(--deep-blue);
+      background: var(--deep-blue);
       color: white;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 20;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    nav a {
-      margin-left: 12px;
-      text-decoration: none;
+    .sm-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
       color: white;
       font-weight: bold;
+      font-size: 1rem;
     }
 
-    nav a:hover {
+    .staggered-menu-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: clamp(260px, 38vw, 420px);
+      height: 100%;
+      background: white;
+      padding: 6em 2em 2em 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transition: right 0.4s ease;
+      z-index: 10;
+    }
+
+    .staggered-menu-wrapper[data-open="true"] .staggered-menu-panel {
+      right: 0;
+    }
+
+    .staggered-menu-panel a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #222;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .staggered-menu-panel a:hover {
       color: var(--vibrant-orange);
     }
 
     /* Contact Section */
-    .contact {
+    section {
       max-width: 600px;
-      margin: 80px auto;
+      margin: 100px auto;
       padding: 0 20px;
       text-align: center;
     }
 
-    .contact h2 {
+    section h2 {
       font-size: 2rem;
       color: var(--deep-blue);
       margin-bottom: 40px;
     }
 
-    .contact p {
+    section p {
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
 
-    .contact a {
+    section a {
       color: var(--vibrant-orange);
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
-    .contact a:hover {
+    section a:hover {
       text-decoration: underline;
     }
 
@@ -85,51 +136,52 @@
       margin-top: 40px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .contact h2 {
-        font-size: 1.5rem;
-      }
-      .contact p {
-        font-size: 1rem;
-      }
-      header {
+      .staggered-menu-header {
         flex-direction: column;
         align-items: flex-start;
-      }
-      nav {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      nav a {
-        margin-left: 0;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Epiq Cartel</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="team.html">Team</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+
+<div class="staggered-menu-wrapper" data-open="false">
+  <header class="staggered-menu-header">
+    <div class="sm-logo"><h1 class="gradient-text">Epiq Cartel</h1></div>
+    <button class="sm-toggle">Menu</button>
   </header>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:epiqcartel.team@gmail.com">epiqcartel.team@gmail.com</a></p>
-    <p>Alternate Email: <a href="mailto:horizonsyndicate.team@gmail.com">horizonsyndicate.team@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/horizonsyndicate" target="_blank">@horizonsyndicate</a></p>
-  </section>
+  <nav class="staggered-menu-panel">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="team.html">Team</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contacts.html">Contact</a>
+  </nav>
+</div>
 
-  <footer>
-    &copy; 2025 Epiq Cartel
-  </footer>
+<section>
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:epiqcartel.team@gmail.com">epiqcartel.team@gmail.com</a></p>
+  <p>Alternate Email: <a href="mailto:horizonsyndicate.team@gmail.com">horizonsyndicate.team@gmail.com</a></p>
+  <p>Instagram: <a href="https://instagram.com/horizonsyndicate" target="_blank">@horizonsyndicate</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Epiq Cartel
+</footer>
+
+<script>
+  const wrapper = document.querySelector('.staggered-menu-wrapper');
+  const toggleBtn = document.querySelector('.sm-toggle');
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = wrapper.getAttribute('data-open') === 'true';
+    wrapper.setAttribute('data-open', !isOpen);
+  });
+</script>
+
 </body>
 </html>
