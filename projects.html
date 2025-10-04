@@ -1,156 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects - Epiq Cartel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #F7FBFC;
-      color: #0a0a0a;
-    }
-
-    header {
-      background-color: #769FCD;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      background-color: #B9D7EA;
-      padding: 10px;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #0a0a0a;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #769FCD;
-    }
-
-    .projects-section {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 30px;
-    }
-
-    h1 {
-      color: #769FCD;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      background-color: #D6E6F2;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .project-card h2 {
-      margin-top: 0;
-      color: #769FCD;
-    }
-
-    .project-card p {
-      color: #333;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #769FCD;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    }
-
-    .project-link:hover {
-      background-color: #5d89b5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      background-color: #B9D7EA;
-      color: #0a0a0a;
-      font-size: 14px;
+    .gradient-text {
+      background: linear-gradient(90deg, #093FB4, #ED3500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h2>Epiq Cartel</h2>
+<body class="bg-[#FFFCFB] font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 bg-[#FFD8D8] shadow sticky top-0 z-50">
+    <div class="text-2xl font-bold gradient-text">Epiq Cartel</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+      <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+      <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+      <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+      <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden p-2 rounded bg-[#093FB4] text-white">Menu</button>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contacts.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden fixed top-0 right-0 w-64 h-full bg-[#FFD8D8] shadow-lg p-6 flex flex-col space-y-6 z-40">
+    <a href="index.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Home</a>
+    <a href="about.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">About</a>
+    <a href="services.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Services</a>
+    <a href="projects.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Projects</a>
+    <a href="contacts.html" class="font-semibold text-[#093FB4] hover:text-[#ED3500]">Contact</a>
+  </div>
 
-  <section class="projects-section">
-    <h1>Our Projects</h1>
-
-    <div class="project-grid">
-      <div class="project-card">
-        <h2>LowkiFlex</h2>
-        <p>A creative calculator hub designed for intuitive use, offering advanced functionalities with a clean UI.</p>
-        <a href="#" class="project-link">View Project</a>
+  <!-- Projects Section -->
+  <section class="max-w-6xl mx-auto py-32 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-12 gradient-text">Our Projects</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="bg-[#FFD8D8] p-8 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-[#093FB4] mb-4">LowkiFlex</h3>
+        <p class="text-[#093FB4]">A smart calculator hub designed to make calculations fast, simple, and accessible for everyone.</p>
       </div>
-
-      <div class="project-card">
-        <h2>QR Code Wizard</h2>
-        <p>An innovative tool that lets users generate and stylize QR codes with unique designs and branding.</p>
-        <a href="#" class="project-link">View Project</a>
+      <div class="bg-[#FFD8D8] p-8 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-[#093FB4] mb-4">Project B</h3>
+        <p class="text-[#093FB4]">An innovative SaaS solution coming soon to streamline workflows and improve productivity.</p>
       </div>
-
-      <div class="project-card">
-        <h2>AI Form Assist</h2>
-        <p>An AI-powered SaaS form generator for teams to automate responses, collect data, and integrate easily.</p>
-        <a href="#" class="project-link">View Project</a>
+      <div class="bg-[#FFD8D8] p-8 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold text-[#093FB4] mb-4">Project C</h3>
+        <p class="text-[#093FB4]">Custom software and product services tailored to meet specific business needs efficiently.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Epiq Cartel. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-[#FFD8D8] text-[#093FB4]">
+    © 2025 Epiq Cartel | Email: epiqcartel.team@gmail.com | IG: @horizonsyndicate
   </footer>
+
+  <!-- JS for Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
 </body>
 </html>
