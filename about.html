@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Epiq Cartel</title>
+  <style>
+    :root {
+      --deep-blue: #0046FF;
+      --soft-cyan: #73C8D2;
+      --light-cream: #F5F1DC;
+      --vibrant-orange: #FF9013;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--light-cream);
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--deep-blue);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--vibrant-orange);
+    }
+
+    /* About Section */
+    .about {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .about h2 {
+      color: var(--deep-blue);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .about ul {
+      list-style: disc inside;
+      margin-top: 10px;
+    }
+
+    .about ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--deep-blue);
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .about h2 {
+        font-size: 1.5rem;
+      }
+      .about p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>About Us</h2>
+    <p><strong>Epiq Cartel</strong> is a small team who can do incredible work in an easy way. Our goal is to continuously learn, grow, and deliver high-quality results while keeping things simple and effective.</p>
+
+    <p>Our vision and mission:</p>
+    <ul>
+      <li>Learn and grow together</li>
+      <li>Deliver innovative solutions</li>
+      <li>Maintain a perfectionist, positive, and progressive approach</li>
+    </ul>
+
+    <p>At Epiq Cartel, we embrace creativity, efficiency, and teamwork, focusing on building projects that make a real impact while keeping the process smooth and enjoyable.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Epiq Cartel. Contact: epiqcartel.team@gmail.com
+  </footer>
+</body>
+</html>
