@@ -1,182 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects - Epiq Cartel</title>
   <style>
-    :root {
-      --light-bg: #F7FBFC;
-      --mid-blue: #D6E6F2;
-      --soft-blue: #B9D7EA;
-      --deep-blue: #769FCD;
-      --text-dark: #1f1f1f;
-      --accent: #4079ff;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
     body {
       margin: 0;
-      font-family: var(--font-family);
-      background-color: var(--light-bg);
-      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
+      background-color: #F7FBFC;
+      color: #0a0a0a;
     }
 
     header {
+      background-color: #769FCD;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: var(--deep-blue);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      justify-content: center;
+      background-color: #B9D7EA;
+      padding: 10px;
+      margin: 0;
+      flex-wrap: wrap;
     }
 
-    header h1 {
-      font-size: 1.8rem;
-      background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientMove 3s infinite linear;
-      background-size: 300%;
+    nav ul li {
+      margin: 5px 15px;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0%; }
-      100% { background-position: 300%; }
-    }
-
-    nav a {
-      margin-left: 20px;
+    nav ul li a {
       text-decoration: none;
-      color: white;
+      color: #0a0a0a;
       font-weight: 600;
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    nav ul li a:hover {
+      color: #769FCD;
     }
 
-    .projects {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
+    .projects-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #769FCD;
       text-align: center;
-    }
-
-    .projects h2 {
-      color: var(--deep-blue);
-      font-size: 2rem;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .project-card {
-      background-color: var(--soft-blue);
+      background-color: #D6E6F2;
+      padding: 20px;
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .project-card-content {
-      padding: 20px;
-      text-align: left;
-    }
-
-    .project-card h3 {
-      color: var(--deep-blue);
-      margin-bottom: 8px;
+    .project-card h2 {
+      margin-top: 0;
+      color: #769FCD;
     }
 
     .project-card p {
-      font-size: 1rem;
       color: #333;
-      line-height: 1.6;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #769FCD;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .project-link:hover {
+      background-color: #5d89b5;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: var(--deep-blue);
-      color: white;
-      margin-top: 60px;
+      padding: 15px;
+      margin-top: 40px;
+      background-color: #B9D7EA;
+      color: #0a0a0a;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Epiq Cartel</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="team.html">Team</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <h2>Epiq Cartel</h2>
   </header>
 
-  <section class="projects">
-    <h2>Our Projects</h2>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="projects-section">
+    <h1>Our Projects</h1>
+
     <div class="project-grid">
-
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x180?text=E-Commerce+Platform" alt="E-commerce Project">
-        <div class="project-card-content">
-          <h3>E-Commerce Platform</h3>
-          <p>An innovative online shopping system featuring real-time analytics, smart filters, and secure payment integrations.</p>
-        </div>
+        <h2>LowkiFlex</h2>
+        <p>A creative calculator hub designed for intuitive use, offering advanced functionalities with a clean UI.</p>
+        <a href="#" class="project-link">View Project</a>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x180?text=Portfolio+Website" alt="Portfolio Project">
-        <div class="project-card-content">
-          <h3>Portfolio Website</h3>
-          <p>A sleek, minimal portfolio design for creators and professionals showcasing their skills and achievements.</p>
-        </div>
+        <h2>QR Code Wizard</h2>
+        <p>An innovative tool that lets users generate and stylize QR codes with unique designs and branding.</p>
+        <a href="#" class="project-link">View Project</a>
       </div>
 
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x180?text=AI+Dashboard" alt="AI Dashboard">
-        <div class="project-card-content">
-          <h3>AI Analytics Dashboard</h3>
-          <p>A modern, interactive dashboard designed to visualize large-scale data with AI-powered insights and trends.</p>
-        </div>
+        <h2>AI Form Assist</h2>
+        <p>An AI-powered SaaS form generator for teams to automate responses, collect data, and integrate easily.</p>
+        <a href="#" class="project-link">View Project</a>
       </div>
-
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x180?text=Event+Organizer+App" alt="Event Organizer">
-        <div class="project-card-content">
-          <h3>Event Organizer App</h3>
-          <p>A mobile app that helps users manage events, invites, and schedules effortlessly with real-time updates.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Epiq Cartel — All rights reserved.
+    <p>© 2025 Epiq Cartel. All rights reserved.</p>
   </footer>
 </body>
 </html>
