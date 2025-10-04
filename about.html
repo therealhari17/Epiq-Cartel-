@@ -20,7 +20,6 @@
       color: #222;
     }
 
-    /* Header */
     header {
       display: flex;
       justify-content: space-between;
@@ -39,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 12px; /* reduced space */
       text-decoration: none;
       color: white;
       font-weight: bold;
@@ -54,32 +53,21 @@
       max-width: 900px;
       margin: 60px auto;
       padding: 0 20px;
+      line-height: 1.6;
     }
 
     .about h2 {
-      color: var(--deep-blue);
       font-size: 2rem;
-      margin-bottom: 20px;
+      color: var(--deep-blue);
+      margin-bottom: 30px;
       text-align: center;
     }
 
     .about p {
       font-size: 1.2rem;
-      line-height: 1.7;
       margin-bottom: 20px;
-      text-align: justify;
     }
 
-    .about ul {
-      list-style: disc inside;
-      margin-top: 10px;
-    }
-
-    .about ul li {
-      margin-bottom: 8px;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
@@ -88,12 +76,26 @@
       margin-top: 40px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .about h2 {
         font-size: 1.5rem;
       }
       .about p {
         font-size: 1rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        margin-left: 0;
       }
     }
   </style>
@@ -106,46 +108,19 @@
       <a href="team.html">Team</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="contacts.html">Contact</a>
     </nav>
   </header>
 
   <section class="about">
-    <h2>About Us</h2>
-    <p><strong>Epiq Cartel</strong> is a small team who can do incredible work in an easy way. Our goal is to continuously learn, grow, and deliver high-quality results while keeping things simple and effective.</p>
-
-    <p>Our vision and mission:</p>
-    <ul>
-      <li>Learn and grow together</li>
-      <li>Deliver innovative solutions</li>
-      <li>Maintain a perfectionist, positive, and progressive approach</li>
-    </ul>
-
-    <p>At Epiq Cartel, we embrace creativity, efficiency, and teamwork, focusing on building projects that make a real impact while keeping the process smooth and enjoyable.</p>
+    <h2>About Epiq Cartel</h2>
+    <p>Epiq Cartel is a small but highly efficient team that can accomplish incredible work in an easy and effective way. We focus on learning, growing, and delivering perfection in every project we take on.</p>
+    <p>Our team values are centered around being perfectionists, staying positive, and progressing continually. We believe in turning ideas into reality while maintaining high standards of quality and innovation.</p>
+    <p>Founded in 2025, Epiq Cartel operates with a forward-thinking approach, blending creativity, technology, and strategic problem-solving to offer the best solutions for our clients and products.</p>
   </section>
 
   <footer>
-    &copy; 2025 Epiq Cartel. Contact: epiqcartel.team@gmail.com
+    &copy; 2025 Epiq Cartel
   </footer>
 </body>
 </html>
-/* Navigation adjustments */
-nav a {
-  margin-left: 12px; /* reduce space between links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  nav a {
-    margin-left: 0; /* remove extra left margin for wrap */
-  }
-}
