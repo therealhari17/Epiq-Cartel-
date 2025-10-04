@@ -38,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 12px; /* reduced space */
       text-decoration: none;
       color: white;
       font-weight: bold;
@@ -48,6 +48,7 @@
       color: var(--vibrant-orange);
     }
 
+    /* Contact Section */
     .contact {
       max-width: 600px;
       margin: 60px auto;
@@ -84,12 +85,26 @@
       margin-top: 40px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .contact h2 {
         font-size: 1.5rem;
       }
       .contact p {
         font-size: 1rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        margin-left: 0;
       }
     }
   </style>
@@ -118,23 +133,3 @@
   </footer>
 </body>
 </html>
-/* Navigation adjustments */
-nav a {
-  margin-left: 12px; /* reduce space between links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  nav a {
-    margin-left: 0; /* remove extra left margin for wrap */
-  }
-}
