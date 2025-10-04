@@ -6,143 +6,101 @@
   <title>Services - Epiq Cartel</title>
   <style>
     :root {
-      --deep-blue: #0046FF;
-      --soft-cyan: #73C8D2;
-      --light-cream: #F5F1DC;
-      --vibrant-orange: #FF9013;
+      --light-bg: #F7FBFC;
+      --mid-blue: #D6E6F2;
+      --soft-blue: #B9D7EA;
+      --deep-blue: #769FCD;
+      --text-dark: #1f1f1f;
+      --accent: #4079ff;
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      --sm-accent: #FF9013;
     }
 
     body {
       margin: 0;
       font-family: var(--font-family);
-      background-color: var(--light-cream);
-      color: #222;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
     }
 
-    /* Gradient Text Animation */
-    .gradient-text {
-      font-size: 2rem;
-      font-weight: bold;
-      background: linear-gradient(270deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
-      background-size: 1000% 1000%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientMove 5s ease infinite;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Staggered Menu CSS */
-    .staggered-menu-wrapper {
-      position: relative;
-      width: 100%;
-      z-index: 40;
-    }
-
-    .staggered-menu-header {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background: var(--deep-blue);
+      background-color: var(--deep-blue);
       color: white;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 1000;
     }
 
-    .sm-toggle {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
+    header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 3s infinite linear;
+      background-size: 300%;
     }
 
-    .staggered-menu-panel {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: clamp(260px, 38vw, 420px);
-      height: 100%;
-      background: white;
-      padding: 6em 2em 2em 2em;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      transition: right 0.4s ease;
-      z-index: 10;
+    @keyframes gradientMove {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
     }
 
-    .staggered-menu-wrapper[data-open="true"] .staggered-menu-panel {
-      right: 0;
-    }
-
-    .staggered-menu-panel a {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #222;
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      text-transform: uppercase;
-      display: block;
-      transition: color 0.3s;
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    .staggered-menu-panel a:hover {
-      color: var(--vibrant-orange);
+    nav a:hover {
+      color: var(--accent);
     }
 
-    /* Services Section */
-    section {
-      max-width: 900px;
-      margin: 100px auto;
+    .services {
+      max-width: 1100px;
+      margin: 80px auto;
       padding: 0 20px;
       text-align: center;
     }
 
-    section h2 {
+    .services h2 {
+      color: var(--deep-blue);
       font-size: 2rem;
-      color: var(--deep-blue);
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-    .services-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
-    .service {
-      background-color: white;
-      border-radius: 10px;
-      padding: 25px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    .service-card {
+      background-color: var(--soft-blue);
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service:hover {
-      transform: translateY(-5px);
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    .service h3 {
-      margin: 0 0 15px 0;
+    .service-card h3 {
+      margin-bottom: 12px;
       color: var(--deep-blue);
     }
 
-    .service p {
-      margin: 0;
+    .service-card p {
       font-size: 1rem;
-      line-height: 1.5;
-      color: #555;
+      color: #333;
+      line-height: 1.6;
     }
 
     footer {
@@ -150,75 +108,50 @@
       padding: 20px;
       background-color: var(--deep-blue);
       color: white;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .staggered-menu-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .services-list {
-        flex-direction: column;
-        align-items: center;
-      }
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-
-<div class="staggered-menu-wrapper" data-open="false">
-  <header class="staggered-menu-header">
-    <div class="sm-logo"><h1 class="gradient-text">Epiq Cartel</h1></div>
-    <button class="sm-toggle">Menu</button>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav class="staggered-menu-panel">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="team.html">Team</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="contacts.html">Contact</a>
-  </nav>
-</div>
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>We craft responsive, modern, and visually appealing websites with strong performance and clean UI/UX design.</p>
+      </div>
 
-<section>
-  <h2>Our Services</h2>
-  <div class="services-list">
-    <div class="service">
-      <h3>Software Development</h3>
-      <p>Creating innovative software solutions tailored to your needs.</p>
+      <div class="service-card">
+        <h3>App Design</h3>
+        <p>From concept to prototype, we build user-friendly mobile apps that combine creativity with functionality.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Brand Strategy</h3>
+        <p>We help brands find their voice — building strong identities and strategies that stand out in a competitive world.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Digital Marketing</h3>
+        <p>Grow your reach through tailored campaigns, social media strategy, and performance-driven marketing solutions.</p>
+      </div>
     </div>
-    <div class="service">
-      <h3>SaaS Platforms</h3>
-      <p>Providing cloud-based tools to streamline business operations.</p>
-    </div>
-    <div class="service">
-      <h3>Product Design</h3>
-      <p>Designing intuitive, user-friendly products for modern businesses.</p>
-    </div>
-    <div class="service">
-      <h3>Consulting</h3>
-      <p>Expert advice to help you grow, optimize, and innovate.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  &copy; 2025 Epiq Cartel
-</footer>
-
-<script>
-  const wrapper = document.querySelector('.staggered-menu-wrapper');
-  const toggleBtn = document.querySelector('.sm-toggle');
-
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = wrapper.getAttribute('data-open') === 'true';
-    wrapper.setAttribute('data-open', !isOpen);
-  });
-</script>
-
+  <footer>
+    &copy; 2025 Epiq Cartel — All rights reserved.
+  </footer>
 </body>
 </html>
