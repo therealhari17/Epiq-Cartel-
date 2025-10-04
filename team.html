@@ -38,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 12px; /* reduced space */
       text-decoration: none;
       color: white;
       font-weight: bold;
@@ -101,10 +101,25 @@
       margin-top: 40px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       .members {
         flex-direction: column;
         align-items: center;
+      }
+      /* Navigation wrap for small screens */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        margin-left: 0; /* remove extra left margin */
       }
     }
   </style>
@@ -117,7 +132,7 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="contacts.html">Contact</a>
     </nav>
   </header>
 
@@ -148,23 +163,3 @@
   </footer>
 </body>
 </html>
-/* Navigation adjustments */
-nav a {
-  margin-left: 12px; /* reduce space between links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  nav a {
-    margin-left: 0; /* remove extra left margin for wrap */
-  }
-}
