@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Epiq Cartel</title>
+  <style>
+    :root {
+      --deep-blue: #0046FF;
+      --soft-cyan: #73C8D2;
+      --light-cream: #F5F1DC;
+      --vibrant-orange: #FF9013;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--light-cream);
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--deep-blue);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--vibrant-orange);
+    }
+
+    .contact {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      color: var(--deep-blue);
+      margin-bottom: 40px;
+    }
+
+    .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      color: var(--vibrant-orange);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--deep-blue);
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .contact h2 {
+        font-size: 1.5rem;
+      }
+      .contact p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at: <a href="mailto:epiqcartel.team@gmail.com">epiqcartel.team@gmail.com</a></p>
+    <p>Alternate Email: <a href="mailto:horizonsyndicate.team@gmail.com">horizonsyndicate.team@gmail.com</a></p>
+    <p>Follow us on Instagram: <a href="https://instagram.com/horizonsyndicate" target="_blank">@horizonsyndicate</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Epiq Cartel
+  </footer>
+</body>
+</html>
