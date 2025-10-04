@@ -38,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 12px; /* reduced space */
       text-decoration: none;
       color: white;
       font-weight: bold;
@@ -48,49 +48,58 @@
       color: var(--vibrant-orange);
     }
 
+    /* Projects Section */
     .projects {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 60px auto;
       padding: 0 20px;
+      text-align: center;
     }
 
     .projects h2 {
       font-size: 2rem;
       color: var(--deep-blue);
-      text-align: center;
       margin-bottom: 40px;
     }
 
-    .project-item {
+    .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
       background-color: white;
-      padding: 20px;
       border-radius: 10px;
+      padding: 20px;
+      width: 250px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
       transition: transform 0.3s;
     }
 
-    .project-item:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
 
-    .project-item h3 {
+    .card h3 {
       margin-top: 0;
       color: var(--deep-blue);
     }
 
-    .project-item p {
-      margin-bottom: 10px;
+    .card p {
       color: #555;
     }
 
-    .project-item a {
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
       color: var(--vibrant-orange);
       text-decoration: none;
       font-weight: bold;
     }
 
-    .project-item a:hover {
+    .card a:hover {
       text-decoration: underline;
     }
 
@@ -102,9 +111,25 @@
       margin-top: 40px;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
-      .projects h2 {
-        font-size: 1.5rem;
+      .project-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        margin-left: 0;
       }
     }
   </style>
@@ -117,19 +142,20 @@
       <a href="about.html">About</a>
       <a href="team.html">Team</a>
       <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="contacts.html">Contact</a>
     </nav>
   </header>
 
   <section class="projects">
     <h2>Our Projects</h2>
-
-    <div class="project-item">
-      <h3>LowkiFlex</h3>
-      <p>A calculator hub offering various tools for productivity and calculations.</p>
-      <a href="https://seevil4.netlify.app" target="_blank">Visit Project</a>
+    <div class="project-cards">
+      <div class="card">
+        <h3>LowkiFlex</h3>
+        <p>A calculator hub providing multiple tools in one place for easy calculations.</p>
+        <a href="https://seevil4.netlify.app" target="_blank">View Project</a>
+      </div>
+      <!-- You can add more projects here -->
     </div>
-
   </section>
 
   <footer>
@@ -137,23 +163,3 @@
   </footer>
 </body>
 </html>
-/* Navigation adjustments */
-nav a {
-  margin-left: 12px; /* reduce space between links */
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  nav a {
-    margin-left: 0; /* remove extra left margin for wrap */
-  }
-}
