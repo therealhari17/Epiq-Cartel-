@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team - Epiq Cartel</title>
+  <style>
+    :root {
+      --deep-blue: #0046FF;
+      --soft-cyan: #73C8D2;
+      --light-cream: #F5F1DC;
+      --vibrant-orange: #FF9013;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--light-cream);
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--deep-blue);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--vibrant-orange);
+    }
+
+    /* Team Section */
+    .team {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .team h2 {
+      font-size: 2rem;
+      color: var(--deep-blue);
+      margin-bottom: 40px;
+    }
+
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .member {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member h3 {
+      margin: 0 0 10px 0;
+      color: var(--deep-blue);
+    }
+
+    .member p {
+      margin: 0;
+      font-weight: bold;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--deep-blue);
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .members {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="team">
+    <h2>Our Team</h2>
+    <div class="members">
+      <div class="member">
+        <h3>Hariharan</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="member">
+        <h3>Syed Nashwan</h3>
+        <p>Co-founder</p>
+      </div>
+      <div class="member">
+        <h3>Parthasarathi</h3>
+        <p>Co-founder</p>
+      </div>
+      <div class="member">
+        <h3>Sireesh</h3>
+        <p>Co-founder</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Epiq Cartel. Contact: epiqcartel.team@gmail.com
+  </footer>
+</body>
+</html>
