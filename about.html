@@ -6,115 +6,77 @@
   <title>About - Epiq Cartel</title>
   <style>
     :root {
-      --deep-blue: #0046FF;
-      --soft-cyan: #73C8D2;
-      --light-cream: #F5F1DC;
-      --vibrant-orange: #FF9013;
+      --light-bg: #F7FBFC;
+      --mid-blue: #D6E6F2;
+      --soft-blue: #B9D7EA;
+      --deep-blue: #769FCD;
+      --text-dark: #1f1f1f;
+      --accent: #4079ff;
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      --sm-accent: #FF9013;
     }
 
     body {
       margin: 0;
       font-family: var(--font-family);
-      background-color: var(--light-cream);
-      color: #222;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
     }
 
-    /* Gradient Text Animation */
-    .gradient-text {
-      font-size: 2rem;
-      font-weight: bold;
-      background: linear-gradient(270deg, #40ffaa, #4079ff, #40ffaa, #4079ff, #40ffaa);
-      background-size: 1000% 1000%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientMove 5s ease infinite;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Staggered Menu CSS */
-    .staggered-menu-wrapper {
-      position: relative;
-      width: 100%;
-      z-index: 40;
-    }
-
-    .staggered-menu-header {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background: var(--deep-blue);
+      background-color: var(--deep-blue);
       color: white;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 1000;
     }
 
-    .sm-toggle {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
+    header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #40ffaa, #4079ff, #40ffaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 3s infinite linear;
+      background-size: 300%;
     }
 
-    .staggered-menu-panel {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: clamp(260px, 38vw, 420px);
-      height: 100%;
-      background: white;
-      padding: 6em 2em 2em 2em;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      transition: right 0.4s ease;
-      z-index: 10;
+    @keyframes gradientMove {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
     }
 
-    .staggered-menu-wrapper[data-open="true"] .staggered-menu-panel {
-      right: 0;
-    }
-
-    .staggered-menu-panel a {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #222;
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      text-transform: uppercase;
-      display: block;
-      transition: color 0.3s;
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    .staggered-menu-panel a:hover {
-      color: var(--vibrant-orange);
+    nav a:hover {
+      color: var(--accent);
     }
 
-    section {
-      max-width: 800px;
-      margin: 100px auto;
+    section.about {
+      max-width: 900px;
+      margin: 80px auto;
       padding: 0 20px;
       text-align: center;
     }
 
-    section h2 {
-      font-size: 2rem;
+    .about h2 {
       color: var(--deep-blue);
+      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    section p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+    .about p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #333;
     }
 
     footer {
@@ -122,54 +84,38 @@
       padding: 20px;
       background-color: var(--deep-blue);
       color: white;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .staggered-menu-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-
-<div class="staggered-menu-wrapper" data-open="false">
-  <header class="staggered-menu-header">
-    <div class="sm-logo"><h1 class="gradient-text">Epiq Cartel</h1></div>
-    <button class="sm-toggle">Menu</button>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav class="staggered-menu-panel">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="team.html">Team</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="contacts.html">Contact</a>
-  </nav>
-</div>
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Epiq Cartel is a passionate community built by creators, for creators.  
+      We focus on innovation, teamwork, and the drive to turn ideas into impact.  
+      From digital experiences to creative projects, our goal is to deliver excellence and inspiration in everything we do.
+    </p>
+    <p>
+      Our team brings together designers, developers, and visionaries who believe  
+      in the power of collaboration. We don’t just build — we evolve, adapt, and grow with every project.
+    </p>
+  </section>
 
-<section>
-  <h2>About Us</h2>
-  <p>Epiq Cartel is a small but powerful team capable of achieving incredible results in the simplest ways.  
-     We believe in learning, growing, and constantly improving. Our approach is perfectionist, positive, and progressive.</p>
-</section>
-
-<footer>
-  &copy; 2025 Epiq Cartel
-</footer>
-
-<script>
-  const wrapper = document.querySelector('.staggered-menu-wrapper');
-  const toggleBtn = document.querySelector('.sm-toggle');
-
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = wrapper.getAttribute('data-open') === 'true';
-    wrapper.setAttribute('data-open', !isOpen);
-  });
-</script>
-
+  <footer>
+    &copy; 2025 Epiq Cartel — All rights reserved.
+  </footer>
 </body>
 </html>
