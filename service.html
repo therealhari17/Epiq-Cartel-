@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Epiq Cartel</title>
+  <style>
+    :root {
+      --deep-blue: #0046FF;
+      --soft-cyan: #73C8D2;
+      --light-cream: #F5F1DC;
+      --vibrant-orange: #FF9013;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--light-cream);
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--deep-blue);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--vibrant-orange);
+    }
+
+    .services {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .services h2 {
+      font-size: 2rem;
+      color: var(--deep-blue);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-item h3 {
+      margin-top: 0;
+      color: var(--deep-blue);
+    }
+
+    .service-item p {
+      margin-bottom: 0;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--deep-blue);
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .services h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Epiq Cartel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="services">
+    <h2>Our Services</h2>
+
+    <div class="service-item">
+      <h3>SaaS Platforms</h3>
+      <p>We develop cloud-based software solutions to streamline business processes and enhance productivity.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Product-Oriented Software</h3>
+      <p>We build software products that solve real-world problems efficiently, with a focus on usability and scalability.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Custom Web Applications</h3>
+      <p>From design to deployment, we create custom web applications tailored to your specific needs and goals.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Epiq Cartel. Contact: epiqcartel.team@gmail.com
+  </footer>
+</body>
+</html>
